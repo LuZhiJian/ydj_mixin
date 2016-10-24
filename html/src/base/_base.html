@@ -1,0 +1,11 @@
+{# 布局文件 #}
+{% extends "./_layout.html" %}
+
+{% block main %}
+<body>
+    <div class="container">
+    {% block header %}{% endblock header %}
+    {% block content %}{% endblock content %}
+    </div>
+</body>
+{% endblock main %}

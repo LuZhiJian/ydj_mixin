@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title> Mixin函数 </title>
+    <link rel="stylesheet" href="../../style/css/test.css">
+    <!-- 页面样式 -->
+</head>
+
+<body>
+    <div class="container">
+        <header class="common-header">
+            Mix函数
+        </header>
+        <div class="main-wrapper">
+            <div class="min-title">盒子大小： wh(200px,100px)</div>
+            <div class="show">
+                <div class="wh"></div>
+            </div>
+            <div class="min-title">盒子大小： square(100px)</div>
+            <div class="show">
+                <div class="square">111</div>
+            </div>
+            <div class="min-title">高度及行高：hlh(60px)</div>
+            <div class="show">
+                <div class="hlh">line-height为60的盒子</div>
+            </div>
+            <div class="min-title">文字溢出省略：text-overflow()</div>
+            <div class="show">
+                <div class="text-overflow">当一阵风吹来，风筝飞上天空，为了你而祈祷，而祝福，而感动，终于你身影，消失在，人海尽头，才发现 笑着哭，最痛。</div>
+            </div>
+            <div class="min-title">清除浮动：clearfix</div>
+            <div class="show">
+                <div class="clearfix">
+                    <div class="left" style="width: 50%;">left</div>
+                    <div class="right" style="width: 50%;">right</div>
+                </div>
+            </div>
+            <div class="min-title">水平居中：horizontal-center( 500px )</div>
+            <div class="show">
+                <div class="center-box">
+                    .center-box { @include horizontal-center( 500px ); }
+                </div>
+            </div>
+            <div class="min-title">透明度：opacity(60)</div>
+            <div class="show">
+                <div class="opacity">
+                    <img src="http://s1.yidejia.com/panel/newIndex/newHead/logo.png">
+                </div>
+            </div>
+            <div class="min-title">圆形盒子： radius-box(30px)</div>
+            <div class="show">
+                <div class="radius-box">1</div>
+            </div>
+            <div class="min-title">扁型圆形盒子： radius-flat-box(60px,30px)</div>
+            <div class="show">
+                <div class="radius-flat-box">1</div>
+            </div>
+            <div class="min-title">hover动作过渡时间： transition(.5s)</div>
+            <div class="show">
+                <div class="hover">1</div>
+            </div>
+            <div class="min-title">hover动作过渡时间 + 放大效果： @include scale(1.2); @include transition(1s);</div>
+            <div class="show">
+                <div class="hoverscale">1</div>
+            </div>
+            <div class="min-title">盒子旋转角度： @include rotate( 30deg)</div>
+            <div class="show">
+                <div class="rotate">1</div>
+            </div>
+            <div class="min-title">动画spin：animation(spin , 2s , ease , infinite)</div>
+            <div class="show">
+                <div class="spin">1</div>
+            </div>
+            <div class="min-title">loading效果</div>
+            <div class="show">
+                <div class="spinner">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+            </div>
+            <div class="min-title">呼吸效果：animation(breath , 2s , ease , infinite)</div>
+            <div class="show">
+                <div class="breath"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

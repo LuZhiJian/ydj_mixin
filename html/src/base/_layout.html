@@ -1,0 +1,17 @@
+{# 基本框架 #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>{% block title %} 伊的家共用Mixin {% endblock title %}</title>
+    <link rel="stylesheet" href="{{root_path}}style/css/test.css">
+    {% block style %}
+    <!-- 页面样式 -->
+    {% endblock style %}
+</head>
+    {% block main %}<body></body>{% endblock main %}
+</html>

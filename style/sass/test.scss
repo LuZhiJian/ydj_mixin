@@ -1,0 +1,132 @@
+@charset "UTF-8";
+@import "_mix";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$color : #520b00;
+$bg: #abcdef;
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.common-header {
+    @include hlh(48px);
+    background-color: $color;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.min-title {
+    @include hlh(30px);
+    border-left: 3px solid #f00;
+    padding-left: 10px;
+    color: $color;
+    margin-bottom: 5px;
+}
+
+.show {
+    width: 100%;
+    border: 1px dashed $color;
+    padding: 5px;
+    margin-bottom: 20px;
+
+    .wh {
+        @include wh(200px,100px);
+        background-color: #abcdef;
+    }
+
+    .square {
+        @include square(100px);
+        background: $bg;
+    }
+
+    .hlh {
+        @include hlh(60px);
+    }
+
+    .text-overflow {
+        @include text-overflow();
+    }
+
+    .clearfix {
+        @include clearfix;
+    }
+
+    .center-box {
+        background-color: #abcdef;
+        height: 80px;
+        @include horizontal-center( 500px );
+    }
+
+    .opacity {
+        @include opacity(60);
+    }
+
+    .radius-box {
+        @include radius-box(30px);
+        background-color: $bg;
+    }
+
+    .radius-flat-box {
+        @include radius-flat-box(60px,30px);
+        background-color: $bg;
+    }
+
+    .hover {
+        @include radius-flat-box(60px,30px);
+        background-color: $bg;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color;
+            color: #fff;
+            @include transition(.5s);
+        }
+    }
+
+    .hoverscale {
+        @include radius-box(30px);
+        background-color: $bg;
+        cursor: pointer;
+
+        &:hover {
+            @include scale(1.2);
+            @include transition(1s);
+        }
+    }
+
+    .rotate {
+        background-color: $bg;
+        @include square(40px);
+        @include rotate(30deg);
+    }
+
+    .spin {
+        background-color: $bg;
+        @include square(40px);
+        @include animation(spin , 2s , ease , infinite);
+    }
+
+    .breath {
+        @include radius-box(30px);
+        background-color: $bg;
+        @include animation(breath , 2s , ease , infinite);
+    }
+}

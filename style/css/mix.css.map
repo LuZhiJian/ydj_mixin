@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "mix.css",
+	"sources": [
+		"../sass/mix.scss"
+	],
+	"mappings": "",
+	"names": []
+}
