@@ -1,0 +1,16 @@
+<footer class="bottom">
+    <!-- 脚部悬浮框 -->
+    <nav>
+        <a mc-for="v in scope.menu"
+           mc-href="v.url | urlJoin"
+           mc-class="v.active ? 'S_active' : ''">
+            <b></b>
+            <span>
+                <i mc-class="v.icon" mc-html="v.iconTxt"></i>
+                <br>
+                <em>{v.title}</em>
+            </span>
+        </a>
+
+    </nav>
+</footer>

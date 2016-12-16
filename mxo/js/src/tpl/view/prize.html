@@ -1,0 +1,20 @@
+<section class="prize">
+    <ul>
+        <li mc-for="v in scope.prizeList.prize_list">
+            <h1>{v.grade}</h1>
+            <div mc-class="'prize-con' + ( v.tip ? ' prize-tips':'')">
+                <p>{v.prize_name}</p>
+                <p mc-if="v.tip">{v.tip}</p>
+            </div>
+            <p>获奖时间:{v.the_time}</p>
+        </li>
+    </ul>
+    <footer class="common-ft">
+        <div class="footer-tips">
+            <p>注：</p><p>{scope.prizeList.tip}</p>
+        </div>
+        <p>本活动由<a mc-href="scope.tech.support_url">@{scope.tech.support_tech}</a>提供技术支持</p>
+    </footer>
+</section>
+
+<foot-btn></foot-btn>

@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+.main.s_rule
+{
+	.center
+	{
+		@extend %cb;
+		padding: rem(0,20,20);
+		font-size: rem(28);
+		line-height: rem(46);
+
+		.rule-detail {
+
+			margin-top: rem(30);
+
+			.tag-head {
+				padding: 0;
+				height: rem(24);
+				line-height: rem(24);
+				margin-bottom: rem(15);
+
+				h5 {
+					padding-left: rem(10);
+				}
+			}
+
+			.intro-text {
+				color: #b2b1b1;
+				padding-bottom: rem(30);
+
+				h4 {
+					line-height: rem(42);
+					span {
+						color: #262626;
+					}
+				}
+
+				p {
+					line-height: rem(42);
+					text-indent: 2em;
+
+					&.s_big
+					{
+						font-size: rem(32);
+						line-height: rem(50);
+					}
+
+					&.s_black
+					{
+						color: #333;
+					}
+
+					.s_red
+					{
+						color: #ff0000;
+					}
+
+					.s_green
+					{
+						color: $green;
+					}
+
+					&.no-indent {
+						text-indent: 0;
+					}
+				}
+			}
+            .rule-prize {
+                p {
+                    font-size: 0.16rem;
+                    text-indent: 0.1rem;
+
+                    &.s_black {
+                        font-size: 0.16rem;
+                    }
+                }
+            }
+            .rule-prize-small {
+                p {
+                    &.s_black {
+                        font-size: 0.14rem;
+                    }
+                }
+            }
+		}
+	}
+}

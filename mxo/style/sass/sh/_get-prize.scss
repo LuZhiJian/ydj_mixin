@@ -1,0 +1,52 @@
+.get-prize {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    background-color: #F2F3F3;
+    padding-bottom: 0.54rem;
+
+    form {
+        margin-bottom: 0.5rem;
+    }
+
+    .get-prize-form {
+        padding: 0.25rem 0.3rem 0.15rem;
+
+        label {
+            display: block;
+            width: 100%;
+            margin-bottom: 0.2rem;
+
+            span {
+                display: inline-block;
+                width: 0.55rem;
+                height: 100%;
+                font-size: 0.14rem;
+            }
+
+            input {
+                display: inline-block;
+                width: 2.6rem;
+                height: 0.4rem;
+                border: none;
+                border-radius: 0.04rem;
+                padding: 0.1rem 0 0.1rem 0.15rem;
+                @include placeholder(#C8C8C8)
+            }
+        }
+    }
+
+    .get-prize-notice {
+        margin: 0 0.225rem 0.14rem;
+        font-size: 0.1rem;
+        line-height: 0.14rem;
+        color: #888;
+        display: -webkit-box;
+
+        p {
+            &:last-child {
+                -webkit-box-flex: 1.0;
+            }
+        }
+    }
+}

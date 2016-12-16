@@ -1,0 +1,332 @@
+$px: 0px;
+
+
+@function image-url($url, $only-path: false, $img-base-path: '../../images/') {
+    $path: $img-base-path + $url;
+
+    @if $only-path {
+        @return $path;
+    }
+
+    @return url($path);
+}
+
+//px
+@function setPx( $value ) {
+
+    @if type-of( $value ) == 'number'
+    {
+        @if ( unitless($value) )//number
+        {
+            @return $value + px;
+        }
+        @else//%
+        {
+            @return $value;
+        }
+    }
+    @else//auto
+    {
+        @return $value;
+    }
+}
+
+@mixin wh( $width, $height: $width )
+{
+    width: setPx( $width );
+    height: setPx( $height );
+}
+
+@mixin hl( $height, $line-height: $height )
+{
+    height: setPx( $height );
+    line-height: setPx( $line-height );
+}
+
+@mixin hlt( $height, $line-height: $height )
+{
+    @include hl( $height, $line-height );
+    text-align: center;
+}
+
+@mixin whl( $width, $height: $width, $line-height: $height )
+{
+    @include wh( $width, $height );
+    line-height: setPx( $line-height );
+}
+
+@mixin whlt( $width, $height: $width, $line-height: $height )
+{
+    @include whl( $width, $height, $line-height );
+    text-align: center;
+}
+
+//rem
+$rem: 170.6666667;
+
+@function setRem( $value ) {
+
+    @if type-of( $value ) == 'number'
+    {
+        @if ( unitless($value) )//number
+        {
+            @return $value / $rem + rem;
+        }
+        @else//%
+        {
+            @return $value;
+        }
+    }
+    @else//auto
+    {
+        @return $value;
+    }
+}
+
+@function rem($px1, $px2: n, $px3: n, $px4: n) {
+
+	$all: $px1 / $rem + rem;
+
+	@each $value in $px2, $px3, $px4 {
+
+		@if $value != n
+		{
+			$all: $all + ' ' + setRem( $value );
+		}
+	}
+    @return $all;
+}
+
+@mixin whr( $width, $height: $width )
+{
+    width: setRem( $width );
+    height: setRem( $height );
+}
+
+@mixin hlr( $height, $line-height: $height )
+{
+    height: setRem( $height );
+    line-height: setRem( $line-height );
+}
+
+@mixin hltr( $height, $line-height: $height )
+{
+    @include hlr( $height, $line-height );
+    text-align: center;
+}
+
+@mixin whlr( $width, $height: $width, $line-height: $height )
+{
+    @include whr( $width, $height );
+    line-height: setRem( $line-height );
+}
+
+@mixin whltr( $width, $height: $width, $line-height: $height )
+{
+    @include whlr( $width, $height, $line-height );
+    text-align: center;
+}
+
+
+
+@mixin fhr($font-size, $height: $font-size)
+{
+	@extend %if;
+	display: inline-block;
+	height: $height / $rem + rem;
+	font-size: $font-size / $rem + rem;
+	line-height: normal;
+}
+
+@mixin tar($maxWidth, $maxHeight, $fontSize, $lineHeight, $borderWidth, $borderColor)
+{
+	width: ($maxWidth - ($lineHeight - $fontSize) * 2 - $borderWidth * 2) / $rem + rem;
+    height: ($maxHeight - ($lineHeight - $fontSize) - $borderWidth * 2) / $rem + rem;
+    font-size: $fontSize / $rem + rem;
+    line-height: $lineHeight / $rem + rem;
+    border: $borderWidth + $px solid $borderColor;
+    padding: rem( ($lineHeight - $fontSize) / 2, ($lineHeight - $fontSize) );
+}
+
+
+
+@mixin op($op)
+{
+	opacity:$op / 100;
+	filter:alpha(opacity = $op);
+}
+
+@mixin bgc($color, $alpha)
+{
+	background: rgb($color);
+	background: rgba($color, $alpha);
+}
+
+@mixin ta($maxWidth, $maxHeight, $fontSize, $lineHeight, $borderWidth, $borderColor)
+{
+	width: $maxWidth - ($lineHeight - $fontSize) * 2 - $borderWidth * 2 + $px;
+    height: $maxHeight - ($lineHeight - $fontSize) - $borderWidth * 2 + $px;
+    font-size: $fontSize + $px;
+    line-height: $lineHeight + $px;
+    border: $borderWidth + $px solid $borderColor;
+    padding: ($lineHeight - $fontSize) / 2 + $px ($lineHeight - $fontSize) + $px;
+}
+
+@mixin rotate($deg)
+{
+	-ms-transform:rotate($deg + deg); /* IE 9 */
+	-moz-transform:rotate($deg + deg); /* Firefox */
+	-webkit-transform:rotate($deg + deg) translateZ(0); /* Safari and Chrome */
+	-o-transform:rotate($deg + deg); /* Opera */
+	transform:rotate($deg + deg);
+}
+
+@mixin legend($line-height, $border-width, $border-style, $border-color, $padding, $background)
+{
+	@include hl($line-height);
+	text-align: center;
+
+	&:before
+	{
+		content: "";
+		position: relative;
+		top: 50%;
+		display: block;
+		border-bottom: $border-width + $px $border-style $border-color;
+	}
+
+	em
+	{
+		display: inline-block;
+		position: relative;
+		padding: 0 $padding + $px;
+		background: $background;
+	}
+}
+
+%el
+{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+%ib
+{
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+}
+
+%yd
+{
+	font-family: Helvetica;
+	font-weight: bold;
+}
+
+%st
+{
+	font-family: Times New Roma;
+}
+
+%cb
+{
+	*zoom: 1;
+	&:before
+	{
+		content: "";
+		display: table;
+	}
+}
+
+%ca
+{
+	*zoom: 1;
+	&:after
+	{
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+%oz
+{
+	overflow: hidden;
+	*zoom: 1;
+}
+
+%if
+{
+    font-family: "iconfont" !important;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+%popup
+{
+	@include wh(100%,100%);
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+
+	.u_cover
+	{
+		@include op(50);
+		height: 100%;
+		background: #000;
+	}
+
+	.u_frame
+	{
+		@include wh(100%,100%);
+		position: fixed;
+		left: 0;
+		top: 0;
+		text-align: center;
+
+		.u_align, .u_box
+		{
+			@extend %ib;
+			vertical-align: middle;
+		}
+
+		.u_align
+		{
+			height: 100%;
+		}
+
+		.u_box
+		{
+			position: relative;
+			background: #fff;
+		}
+	}
+}
+
+%carousel
+{
+	position: relative;
+
+	@at-root .u_screen
+	{
+		overflow: hidden;
+
+		@at-root .u_film_item
+		{
+			float: left;
+		}
+	}
+
+	.u_page
+	{
+		position: absolute;
+	}
+
+	.u_prev, .u_next
+	{
+		position: absolute;
+	}
+}

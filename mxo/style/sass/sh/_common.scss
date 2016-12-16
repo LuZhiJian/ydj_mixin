@@ -1,0 +1,47 @@
+.common-ft {
+    margin-top: 0.15rem;
+
+    .footer-tips {
+        display: -webkit-box;
+        @include shWH(3.25rem, auto);
+        background-color: #F9F9F9;
+        margin: 0 auto 0.08rem;
+        padding: 0.14rem;
+
+        p {
+            text-align: left;
+            line-height: 0.18rem;
+            margin: 0;
+
+            &:first-child {
+                color: $sh-pink;
+            }
+            &:last-child {
+                -webkit-box-flex: 1.0;
+            }
+        }
+    }
+
+    p {
+        text-align: center;
+        color: $sh-gray;
+        font-size: 0.11rem;
+        margin-bottom: 0.07rem;
+        line-height: 0.15rem;
+
+        a {
+            color: $sh-pink;
+        }
+    }
+}
+
+.common-confirm-btn {
+    display: block;
+    margin: 0.3rem auto;
+    @include shWH(2rem, 0.35rem);
+    color: #fff;
+    background-color: #45342D;
+    text-align: center;
+    line-height: 0.35rem;
+    border: none;
+}

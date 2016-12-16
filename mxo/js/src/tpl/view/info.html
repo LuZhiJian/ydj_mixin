@@ -1,0 +1,87 @@
+<div class="main s_info main-wrapper flow-css">
+
+    <!-- <top-title title="主页"></top-title> -->
+
+    <div class="center">
+        <div class="c_deleteTips" mc-hide="scope.info">
+            <header>很遗憾，系统已自动删除您的报名</header>
+            <article>
+                <p>可能是由于您的图片违反了以下规定</p>
+                <p>1.图片违反国家法律规定（禁止黄、赌、毒）；</p>
+                <p>2.涉及恶意广告行为；</p>
+                <p>3.涉及恶意中伤他人等违规行为</p>
+            </article>
+            <a class="t_purBtn" mc-href="'#/signUp' | urlJoin">建议换个姿势，重新上传</a>
+        </div>
+
+        <div mc-show="scope.info">
+            <!-- 选手头像信息 -->
+            <div class="c_banner">
+                <div class="player-info" mc-style="'background-image:url('+ scope.info.banner_img +')'">
+                    <div class="ph-box">
+                        <img mc-src="scope.info.img | imgSize 80 80">
+                    </div>
+                    <p>{ scope.info.name }</p>
+                </div>
+            </div>
+
+            <!-- 票数、排名显示 -->
+            <div class="vote-box row">
+                <div class="col col-50">
+                    <div class="vote-num">
+                        <span> { scope.vote.vote } </span> 票
+                    </div>
+                    <div class="update" mc-show="scope.vote.rank > 1">
+                        距上一名还差 { scope.vote.gap } 票
+                    </div>
+                    <div class="update" mc-hide="scope.vote.rank > 1">
+                        票压群豪
+                    </div>
+                </div>
+                <div class="col col-50">
+                    <div class="vote-num">
+                        当前排名：
+                        <span> { scope.vote.rank }</span>
+                    </div>
+                    <div class="update" mc-show="scope.vote.rank > 1">
+                        加油吧，么么哒！
+                    </div>
+                    <div class="update" mc-hide="scope.vote.rank > 1">
+                        无敌是最寂莫！
+                    </div>
+                </div>
+            </div>
+
+            <div class="tag-head" mc-if="scope.info.summary">
+                <h5>
+                    <span></span>{ scope.info.name } 的参赛宣言：</h5>
+            </div>
+
+            <div class="tag-text" mc-if="scope.info.summary">
+                <p>{ scope.info.summary }</p>
+            </div>
+
+            <div class="tag-head margin-bottom-10">
+                <h5>
+                    <span></span> { scope.info.name } 的照片
+                </h5>
+            </div>
+
+            <div class="flow-mian-wrapper">
+                <div class="deckgrid" >
+                    <div class="img-shot" mc-for="v in scope.info.images">
+                        <img mc-src="v.img | imgMogr 278 278" mc-on-click="showImgs(v.img, scope.info.images)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 投票按钮组 -->
+            <div class="vote-btns-form">
+                <a href="javascript:;" mc-on-click="vote" class="btn btn-pink" >
+                    给Ta投票
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<foot-btn></foot-btn>

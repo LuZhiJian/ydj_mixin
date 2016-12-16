@@ -1,0 +1,54 @@
+<div class="main s_list main-wrapper flow-css t_goTopElement" mc-on-scroll="scroll">
+    <div class="center">
+        <form name="listForm" class="enroll no-bt" mc-on-submit="find" novalidate="">
+            <label class="input-group">
+                <input name="name" type="text"
+                       mc-on-change="changeName"
+                       placeholder="编号/昵称" mc-value="scope.name">
+                <i class="icon icon-sousuo" mc-html="'&#xe601;'"></i>
+            </label>
+            <button type="submit">搜索</button>
+        </form>
+        <div class="enroll no-bt">
+            <div class="flow-tab row">
+                <a mc-href="'#/list' | urlJoin 'open_id' 'the_type' 'name'"
+                   mc-class="'col col-33 ' + (scope.type == 1 ? 'active' : '')">全部</a>
+                <a mc-href="'#/list?type=2' | urlJoin 'open_id' 'the_type' 'name'"
+                   mc-class="'col col-33 ' + (scope.type == 2 ? 'active' : '')">最新</a>
+                <a mc-href="'#/list?type=3' | urlJoin 'open_id' 'the_type' 'name'"
+                   mc-class="'col col-33 ' + (scope.type == 3 ? 'active' : '')">最热</a>
+            </div>
+        </div>
+
+        <div class="t_null" mc-if="scope.list.left.length == 0">
+            暂无相关数据
+        </div>
+
+        <div class="flow-mian-wrapper " mc-if="scope.list.left.length">
+            <div class="f_goTop" mc-show="scope.showGoTop" mc-on-click="goTop"><i></i></div>
+            <div class="deckgrid ">
+
+                <div class="column column-1-2" mc-for="k, list of scope.list">
+                    <div mc-for="v in list">
+                        <div class="img-shot" mc-on-click="goInfo(v.home)">
+                            <img mc-src="v.img | imgMogr 162" mc-alt="v.summary">
+                            <p>
+                                <span>{v.signup_id}号</span>
+                                {v.name}
+                            </p>
+                            <div class="btn-line row">
+                                <b class="col col-60 ng-binding"> {v.votes} 票</b>
+                                <a class="col col-40" href="javascript:;" mc-on-click="vote(v.home, v.name)">投票</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<foot-btn></foot-btn>

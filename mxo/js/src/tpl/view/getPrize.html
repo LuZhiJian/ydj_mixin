@@ -1,0 +1,16 @@
+<section class="get-prize">
+    <form mc-validator="saveWinnerInfo">
+        <div class="get-prize-form">
+            <label><span>姓名</span><input type="text" name="name" validator="required" placeholder="请输入您的姓名"></label>
+            <label><span>手机号</span><input type="tel" name="handset" validator="required | isMobile" placeholder="请输入您的手机号码"></label>
+            <label><span>微信号</span><input type="text" name="wxcode" placeholder="请输入您的微信号码"></label>
+        </div>
+        <button type="submit" class="common-confirm-btn">提交</button>
+    </form>
+    <div class="get-prize-notice">
+    </div>
+    <footer class="common-ft">
+        <p>本活动由<a mc-href="scope.tech.support_url">@{scope.tech.support_tech}</a>提供技术支持</p>
+    </footer>
+</section>
+<foot-btn></foot-btn>

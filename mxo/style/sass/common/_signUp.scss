@@ -1,0 +1,258 @@
+@charset "utf-8";
+
+.main.s_signUp
+{
+	background: #f8f8f8;
+
+	.center
+	{
+		@extend %cb;
+
+		.c_hairstylists
+		{
+			background: #fff;
+
+			header
+			{
+				@include hlr(64);
+				font-size: rem(26);
+				text-align: center;
+			}
+
+			ol
+			{
+				border: 1px solid #ededed;
+				border-width: 1px 0;
+				padding: rem(20,0,12);
+				white-space: nowrap;
+				overflow: auto;
+				-webkit-overflow-scrolling: touch;//兼容苹果系统下内部滚动条速度问题
+
+				li
+				{
+					@extend %ib;
+					width: rem(210);
+					text-align: center;
+
+					& + li
+					{
+						margin-left: rem(50);
+					}
+
+					&.S_active
+					{
+						.e_img
+						{
+							i
+							{
+								display: block;
+							}
+						}
+					}
+
+					.e_img
+					{
+						position: relative;
+						box-shadow: 0 1px 1px rgba(#000,.4);
+
+						img
+						{
+							@include whr(210,210);
+							display: block;
+						}
+
+						i
+						{
+							@extend %if;
+							@include whltr(100%,100%,210);
+							display: none;
+							position: absolute;
+							left: 0px;
+							top: 0px;
+							font-size: rem(62);
+							color: #fff;
+							background: rgba(#ccc,.4);
+						}
+					}
+
+					footer
+					{
+						@extend %el;
+						margin-top: rem(6);
+						font-size: rem(24);
+						color: #979797;
+					}
+				}
+			}
+		}
+
+		.g_explain
+		{
+			@extend %cb;
+			padding: rem(0,30,30);
+			font-size: rem(26);
+			line-height: rem(40);
+			background: #fff;
+
+			p
+			{
+				margin-top: rem(18);
+				padding-left: 0.7em;
+				color: #979797;
+
+				em
+				{
+					float: left;
+					margin-left: -0.7em;
+					color: $green;
+				}
+
+				a
+				{
+					color: $green;
+				}
+			}
+		}
+
+		.m_signUpForm
+		{
+			padding: rem(3,13,16);
+
+			.e_text, textarea
+			{
+				display: block;
+				box-sizing: border-box;
+				border: 0;
+				border-radius: 4px;
+				font-size: rem(24);
+				box-shadow: 0 1px 1px #e9e9e9;
+			}
+
+			.e_text
+			{
+				@include whr(100%,58);
+				margin-top: rem(13);
+				padding: rem(0,18);
+			}
+
+			textarea
+			{
+				@include whlr(100%,320,36);
+				margin-top: rem(18);
+				padding: rem(10,18);
+			}
+
+			.e_tips
+			{
+				font-size: rem(20);
+				color: $green;
+				text-align: right;
+			}
+
+			.c_imgList
+			{
+				margin: rem(13,3,0);
+				white-space: nowrap;
+				overflow: auto;
+				-webkit-overflow-scrolling: touch;//兼容苹果系统下内部滚动条速度问题
+
+				li
+				{
+					@extend %ib;
+					position: relative;
+					width: rem(130);
+					vertical-align: middle;
+					overflow: hidden;
+
+					& + li
+					{
+						margin-left: rem(21);
+					}
+
+					&.s_add
+					{
+						b
+						{
+							@extend %if;
+							display: block;
+							border: 1px dashed #d9d9d9;
+							border-radius: 2px;
+							font-size: rem(24);
+							line-height: rem(128);
+							color: $green;
+							text-align: center;
+
+							& + div
+							{
+								z-index: 2 !important;//兼容某些机器上传不了的问题
+							}
+						}
+					}
+
+					img
+					{
+						display: block;
+						margin: auto;
+						/* max-width: rem(130); */
+						max-height: rem(130);
+					}
+
+					i
+					{
+						@include whltr(100%,40);
+						position: absolute;
+						left: 0px;
+						bottom: 0px;
+						font-size: rem(24);
+						color: #fff;
+						background: rgba(#000,.5);
+						cursor: pointer;
+					}
+				}
+			}
+
+			/* .g_upload
+			{
+				position: relative;
+				border-radius: rem(0,0,5,5);
+				cursor: pointer;
+
+				.inner
+				{
+					@include hlr(80);
+					padding: rem(0,18);
+					color: #838383;
+					background: #dfdfdf;
+
+					i, b
+					{
+						vertical-align: middle;
+					}
+
+					i
+					{
+						@extend %if;
+						font-size: rem(50);
+					}
+
+					b
+					{
+						font-size: rem(24);
+					}
+				}
+			} */
+
+			.e_submit
+			{
+				@include whltr(100%,88);
+				box-sizing: content-box;
+				margin: rem(16,0,0,-13);
+				padding: rem(0,13);
+				border: 0;
+				font-size: rem(32);
+				color: #fff;
+				background: $green;
+			}
+		}
+	}
+}

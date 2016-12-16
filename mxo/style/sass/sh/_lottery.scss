@@ -1,0 +1,133 @@
+.lottery {
+    width: 100%;
+    min-height: 100%;
+    background: $sh-brown url('../../images/lottery-bg.png') no-repeat top center;
+    background-size: 100% auto;
+    overflow: hidden;
+    padding-bottom: 0.54rem;
+
+    .lottery-hd {
+        margin: 0.15rem auto 0.255rem;
+        @include shWH(2.6rem);
+        -webkit-border-radius: 99rem;
+        background-color: rgba( 197, 55, 73, 0.5);
+        overflow: hidden;
+        padding: 0.05rem;
+
+        > a {
+            color: #CD9B60;
+            text-decoration: underline;
+            position: absolute;
+            right: 0.2rem;
+            font-size: 0.1rem;
+            marign-top: 0.05rem;
+        }
+    }
+
+    .lottery-hd-con {
+        @include shWH(100%);
+        -webkit-border-radius: 99rem;
+        background: #F8CF64 url('../../images/mul-circle.png') no-repeat center center;
+        background-size: 98% auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .lottery-dail {
+        margin: 0.125rem;
+        @include shWH(2.25rem);
+        transition: all 6s ease-out 0s;
+        background: transparent url('../../images/dail-mxo.png') no-repeat center center;
+        background-size: 100% auto;
+    }
+
+    .lottery-dail-arrow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include shWH(0.63rem);
+        -webkit-transform: translate(-50%, -50%);
+
+        &.disabled {
+            i {
+                background-image: url('../../images/dail-unarrow.png');
+            }
+        }
+
+        i {
+            margin-top: -.12rem;
+            display: block;
+            background: transparent url('../../images/dail-arrow.png') no-repeat bottom left;
+            background-size: 100% auto;
+            @include shWH(0.63rem, 0.75rem);
+        }
+    }
+
+    .lottery-prize {
+        margin: 0 auto;
+        @include shWH(3.5rem, 2.08rem);
+        overflow: hidden;
+        background: transparent url('../../images/prize-bg.png') no-repeat top left;
+        background-size: 100% auto;
+
+        h1 {
+            margin-top: 0.16rem;
+            text-align: center;
+            color: $sh-pink;
+            font-size: 0.13rem;
+            line-height: 0.185rem;
+        }
+
+        ul {
+            margin: 0.1rem 0 0 0.18rem;
+
+            li {
+                display: -webkit-box;
+                font-size: 0.12rem;
+                margin-bottom: 0.06rem;
+                color: #CB7B2F;
+
+                > p {
+                    line-height: 0.16rem;
+
+                    &:first-child {
+                        width: 0.535rem;
+                    }
+
+                    > span {
+                        color: $sh-pink;
+                        padding: 0 0.04rem;
+                        border-bottom: 1px solid $sh-pink;
+                    }
+                }
+                div {
+                    width: 1.88rem;
+
+                    p {
+                        line-height: 0.16rem;
+
+                        .lottery-smaller {
+                            font-size: 0.1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .lottery-explain {
+        margin: 0.145rem 0.145rem 0 0.24rem;
+        color: $sh-gray;
+        font-size: 0.12rem;
+        line-height: 0.16rem;
+
+        h2 {
+            margin-bottom: 0.05rem;
+        }
+        p {
+            a {
+                color: $sh-pink
+            }
+        }
+    }
+}

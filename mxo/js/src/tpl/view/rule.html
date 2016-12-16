@@ -1,0 +1,48 @@
+<top-title title="规则"></top-title>
+
+<div class="main s_rule">
+    <div class="center">
+        <div class="rule-detail">
+            <div class="tag-head">
+                <h5>
+                    <span></span>活动简介：</h5>
+            </div>
+            <div class="intro-text">
+                <p>{ scope.info.activity_desc }</p>
+            </div>
+            <div class="tag-head">
+                <h5>
+                    <span></span>如何参与</h5>
+            </div>
+            <div class="intro-text">
+                <h4>
+                    <span>1.报名对象：</span>{ scope.info.activity_object }</h4>
+                <h4>
+                    <span>2.活动时间：</span>5月17日10：00——5月23日 18：00</h4>
+                <h4>
+                    <span>3.参赛步骤：</span>{scope.info.activity_step}</h4>
+                <h4>
+                    <span>4.客服电话：</span>{scope.info.server_phone}</h4>
+            </div>
+            <div class="tag-head">
+                <h5>
+                    <span></span>活动流程</h5>
+            </div>
+            <div class="intro-text rule-prize">
+                <p>{ scope.info.activity_follow }</p>
+            </div>
+            <div class="tag-head">
+                <h5>
+                    <span></span>惊喜礼品</h5>
+            </div>
+            <div class="intro-text rule-prize">
+                <p>{ scope.info.prize_desc }</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="common-ft">
+    <p>本活动由<a mc-href="scope.tech.support_url">@{scope.tech.support_tech}</a>提供技术支持</p>
+</footer>
+
+<foot-btn></foot-btn>

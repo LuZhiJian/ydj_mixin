@@ -1,0 +1,31 @@
+<section class="lottery">
+    <header class="lottery-hd">
+        <div class="lottery-hd-con">
+            <div class="lottery-dail" mc-style="'-webkit-transform: rotate(' + scope.rotate + 'deg);'"></div>
+            <div mc-on-click="startLottery(scope.checkLottery.can_click,scope.checkLottery.tip)" mc-class="'lottery-dail-arrow ' + (scope.checkLottery.can_click == 'n' ? 'disabled':'')"><i></i></div>
+        </div>
+        <a mc-if="scope.openId" mc-href="('#/' + scope.haveContact) | urlJoin">我的中奖纪录</a>
+    </header>
+    <div class="lottery-prize">
+        <h1>奖项设置(100%中奖)</h1>
+        <ul>
+            <li mc-for="v in scope.prizeList">
+                <p>{v.grade}</p>
+                <div>
+                    <p>{v.prize_name}</p>
+                    <p mc-if="v.tip" class="lottery-smaller">{v.tip}</p>
+                </div>
+                <p>已领<span>{v.num}</span>份</p>
+            </li>
+        </ul>
+    </div>
+    <article class="lottery-explain">
+        <h2>活动说明:</h2>
+        <p>{scope.checkLottery.lottery_rule}</p>
+    </article>
+    <footer class="common-ft">
+        <p>本活动由<a mc-href="scope.tech.support_url">@{scope.tech.support_tech}</a>提供技术支持</p>
+    </footer>
+</section>
+
+<foot-btn></foot-btn>

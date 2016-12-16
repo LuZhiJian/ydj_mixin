@@ -1,0 +1,48 @@
+<section class="enroll-page">
+    <top-title title="我要报名"></top-title>
+    <div class="care-case">
+        <h5>报名注意事项：</h5>
+        <p>1、填写昵称、获奖手机号及拉票宣言！</p>
+        <p>2、上传参赛的美图。</p>
+    </div>
+    <form mc-validator="signup" novalidate="">
+        <input type="hidden" name="open_id" mc-value="scope.openId">
+
+        <div class="enroll-con">
+            <h3>填写报名信息 (必填)</h3>
+            <input type="text" name="name" validator="required" placeholder="请输入您的姓名或参赛昵称">
+            <input type="tel" name="tel" validator="required | isMobile" placeholder="请输入手机号码">
+            <p>该手机号将作为您到店领奖依据，请认证填写！</p>
+        </div>
+        <div class="enroll-con ">
+            <h3>上传自己的美照，最多上传10张 (必填)</h3>
+            <div class="enroll-img-area">
+                <div class="enroll-img-empty" mc-show="scope.showUploader">
+                    <input type="file" mc-qiniu-uploader="fileUploaded">
+                </div>
+                <div class="enroll-img-container">
+                    <ul mc-style="'width:' + (1.05 * scope.imgs.length) + 'rem'">
+                        <li mc-for="v, k in scope.imgs">
+                            <img mc-src="v | imgSize 100 100" alt="">
+                            <a mc-on-click="removeImg(k)" class="enroll-img-del-btn"></a>
+                        </li>
+                        <!--<li>-->
+                            <!--<img src="../../../../images/hair-stylist.png" alt="">-->
+                            <!--<a href="javascript:" class="enroll-img-del-btn"></a>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="enroll-con">
+            <h3>参赛宣言</h3>
+            <textarea name="summary" placeholder="写点东西为自己拉票吧！"></textarea>
+        </div>
+        <button type="submit" class="common-confirm-btn">提交</button>
+    </form>
+    <footer class="common-ft">
+        <p>本活动由<a mc-href="scope.tech.support_url">@{scope.tech.support_tech}</a>提供技术支持</p>
+    </footer>
+</section>
+
+<foot-btn></foot-btn>

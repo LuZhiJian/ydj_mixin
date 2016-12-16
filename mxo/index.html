@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+
+    <!--<script type='text/javascript'>window.BWEUM||(BWEUM={});BWEUM.info = {"stand":true,"agentType":"browser","agent":"bi-collector.oneapm.com/static/js/bw-send-411.4.5.js","beaconUrl":"bi-collector.oneapm.com/beacon","licenseKey":"rrRRN~AYbfurmeIA","applicationID":2279822};</script><script type="text/javascript" src="//bi-collector.oneapm.com/static/js/bw-loader-411.4.5.js"></script>-->
+
+    <title></title>
+    <link rel="stylesheet" href="./build/dev/style/app.min.css">
+    <!-- REM -->
+    <script type="text/javascript">
+        (function (n, e) {
+            var t = n.documentElement,
+                    i = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    d = function () {
+                        var n = t.clientWidth;
+                        if (n) {
+                            var e = 100 * (n / 375);
+                            e > 200 && (e = 200),
+                            t.style.fontSize = e + 'px'
+                        }
+                    };
+            n.addEventListener && (e.addEventListener(i, d, !1), n.addEventListener('DOMContentLoaded', d, !1))
+        }(document, window));
+    </script>
+    <!-- loading -->
+    <style>
+    .spinner{margin:110px auto 0;width:100%;text-align:center;left: 0;
+    top: 0;position: fixed; z-index: 100}.spinner>div{width:18px;height:18px;background-color:#49d1b0;border-radius:100%;display:inline-block;-webkit-animation:sk-bouncedelay 1.4s infinite ease-in-out both;animation:sk-bouncedelay 1.4s infinite ease-in-out both}.spinner .bounce1{-webkit-animation-delay:-.32s;animation-delay:-.32s}.spinner .bounce2{-webkit-animation-delay:-.16s;animation-delay:-.16s}@-webkit-keyframes sk-bouncedelay{0%,100%,80%{-webkit-transform:scale(0)}40%{-webkit-transform:scale(1)}}@keyframes sk-bouncedelay{0%,100%,80%{-webkit-transform:scale(0);transform:scale(0)}40%{-webkit-transform:scale(1);transform:scale(1)}}
+    </style>
+</head>
+
+<body>
+    <div class="spinner" id="app-loading">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+    <script src="//alicdn.meimeifa.com/static/js/vendor/jquery/2.1.4/jquery-2.1.4.min.js"></script>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="./build/dev/app.all.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+.branch {
+    width: 100%;
+    min-height: 100%;
+    padding-bottom: 0.54rem;
+    overflow: hidden;
+
+    ul {
+        li {
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+            position: relative;
+            border-bottom: 1px solid #F4F4F4;
+            height: 0.965rem;
+
+            img {
+                position: absolute;
+                @include shWH(0.65rem);
+                top: 50%;
+                left: 0.25rem;
+                -webkit-transform: translateY(-50%);
+                border: 1px solid #F4F4F4;
+            }
+
+            .branch-store-con {
+                padding-left: 1.06rem;
+
+                .store-location {
+                    padding-top: 0.25rem;
+                    font-size: 0.16rem;
+                    line-height: 0.22rem;
+                }
+
+                .store-tit {
+                    color: #888888;
+                    line-height: 0.16rem;
+                    font-size: 0.12rem;
+                    padding-top: 0.05rem;
+                }
+            }
+        }
+    }
+}

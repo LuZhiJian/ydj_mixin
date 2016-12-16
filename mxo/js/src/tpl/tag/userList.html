@@ -1,0 +1,24 @@
+<div class="flow-mian-wrapper " mc-show="scope.list.left.length">
+
+    <div class="deckgrid ">
+
+        <div class="column column-1-2" mc-for="k, list of scope.list">
+            <div mc-for="v in list">
+                <div class="img-shot" mc-on-click="goInfo(v.home)">
+                    <img mc-src="v.img | imgMogr 162" mc-alt="v.summary">
+                    <p>
+                        <span>{v.signup_id}号</span>
+                        {v.name}
+                    </p>
+                    <div class="btn-line row">
+                        <b class="col col-60 ng-binding"> {v.votes} 票</b>
+                        <a class="col col-40" href="javascript:;" mc-on-click="showQCore(v.qr_code)">投票</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

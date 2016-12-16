@@ -1,0 +1,23 @@
+/******** sh validator ********/
+@import "./ext/_popover";
+
+@import "./common/pretreated";
+@import "./common/config";
+@import "./common/reset";
+@import "./common/common";
+@import "./common/mixins";
+@import "./common/grid";
+@import "./common/index"; //首页
+@import "./common/rule";
+//@import "./common/signUp";
+
+/******** sh common ********/
+@import "./sh/utils";
+@import "./sh/common";
+
+/******** sh pages ********/
+@import "./sh/lottery";
+@import "./sh/prize";
+@import "./sh/branch";
+@import "./sh/enroll";
+@import "./sh/get-prize";

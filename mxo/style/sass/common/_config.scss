@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+$red: #ec5196;
+$pur: #965bcd;
+$green: #49d1b0;
+$color-pink: #ee2a7b;
+$color-purple: #965bcd;
+
+
+body
+{
+	font-family: PingFang-SC /* !important */;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 62119 */
+  src: url('//at.alicdn.com/t/font_qpt0bk64fe7e3ik9.eot');
+  src: url('//at.alicdn.com/t/font_qpt0bk64fe7e3ik9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_qpt0bk64fe7e3ik9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_qpt0bk64fe7e3ik9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_qpt0bk64fe7e3ik9.svg#iconfont') format('svg');
+}

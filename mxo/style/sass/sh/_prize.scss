@@ -1,0 +1,71 @@
+.prize {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    padding-bottom: 0.54rem;
+
+    ul {
+        margin: 0.2rem 0.25rem 0;
+
+        li {
+            margin-bottom: 0.15rem;
+            padding-top: 0.04rem;
+            height: 1.8rem;
+            background: transparent url('../../images/prize-item-bg.png') no-repeat top left;
+            background-size: 100% 100%;
+            -webkit-border-radius: 0.04rem;
+            text-align: center;
+
+            h1 {
+                @include shWH(0.75rem, 0.32rem);
+                margin: 0.22rem auto 0.15rem;
+                color: #fff;
+                font-size: 0.2rem;
+                border: 1px solid $sh-gray;
+                -webkit-border-radius: 0.01rem;
+            }
+
+            .prize-con {
+                @include shWH(2.825rem, 0.8rem);
+                margin: 0 auto 0.06rem;
+                background-color: $sh-buff;
+                -webkit-border-radius: 0.02rem;
+                overflow: hidden;
+
+                p {
+                    color: $sh-red;
+                    line-height: 0.25rem;
+                    font-size: 0.18rem;
+                    margin-top: 0.29rem;
+
+                    span {
+                        padding-right: 0.08rem;
+                    }
+                }
+            }
+
+            .prize-tips {
+                p {
+                    margin-top: 0.22rem;
+                    margin-bottom: 0.07rem;
+
+                    &:last-child {
+                        margin: 0;
+                        color: #CA8E52;
+                        font-size: 0.12rem;
+                        line-height: 0.16rem;
+                    }
+                }
+            }
+
+            > p {
+                font-size: 0.1rem;
+                line-height: 0.14rem;
+                color: $sh-gray;
+            }
+
+        }
+    }
+
+
+}

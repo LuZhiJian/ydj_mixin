@@ -1,0 +1,18 @@
+<section class="branch">
+    <ul>
+        <li mc-for="v in scope.list.shop">
+            <a mc-href="'#/enroll?salon=' + v.name | urlJoin">
+                <img mc-src="v.shop_img | imgMogr 65 65" alt="">
+                <div class="branch-store-con">
+                    <p class="store-location">{v.shop_name}</p>
+                    <p class="store-tit">{v.shop_tip}</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <footer class="common-ft">
+        <p>本活动由<a mc-on-click="showPublicQrCode" href="http://www.meimeifa.com">@美美发</a>提供技术支持</p>
+    </footer>
+</section>
+
+<foot-btn></foot-btn>

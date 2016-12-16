@@ -1,0 +1,18 @@
+$sh-pink: #EA5C6E;
+$sh-brown: #46352d;
+$sh-gray: #929292;
+$sh-buff: #FCF0C8;
+$sh-red: #E65F4E;
+
+
+
+
+
+/**         mixin             **/
+@mixin shWH ( $width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+
+

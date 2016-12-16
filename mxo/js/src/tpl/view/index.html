@@ -1,0 +1,65 @@
+<div class="container ">
+    <div class="main s_index main-wrapper flow-css ">
+        <!-- <header class="top">
+                <h1>最美代言人</h1>
+            </header> -->
+        <div class="center">
+            <div class="banner">
+                <img mc-src="scope.summary.banner">
+            </div>
+            <div class="vote-box row data-bg">
+                <div class="col col-33">
+                    <div class="vote-num data">{scope.summary.signup}</div>
+                    <div class="fname">
+                        参与选手
+                    </div>
+                </div>
+                <div class="col col-33">
+                    <div class="vote-num data ">{scope.summary.vote}</div>
+                    <div class="fname">
+                        累计投票
+                    </div>
+                </div>
+                <div class="col col-33">
+                    <div class="vote-num data ">{scope.summary.view}</div>
+                    <div class="fname">
+                        访问量
+                    </div>
+                </div>
+            </div>
+            <div class="spokes-detail">
+                <ul>
+                    <li>
+                        <i class="icon icon-rongyu" mc-html="'&#xe603;'"></i>
+                        <b>{ scope.summary.title }</b>
+                    </li>
+                    <li>
+                        <i class="icon icon-time" mc-html="'&#xe605;'"></i>
+                        <b>{ scope.summary.start } 至 { scope.summary.end }</b>
+                    </li>
+                    <li>
+                        <a mc-href="'#/rule' | urlJoin">
+                            <i class="icon icon-tanhao" mc-html="'&#xe607;'"></i>
+                            <b>大赛规则</b>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="enroll my-report s_signUp">
+                <div class="con">
+                    <a mc-href="'#/enroll' | urlJoin" class="btn enroll-btn">我要报名</a>
+                </div>
+            </div>
+            <div class="enroll my-report bt0">
+                <div class="con">
+                    <a mc-href="'#/list' | urlJoin" class="btn enroll-btn s_pur">查看排行</a>
+                </div>
+            </div>
+            <footer class="common-ft">
+                <p>本活动由<a mc-href="scope.tech.support_url">@{scope.tech.support_tech}</a>提供技术支持</p>
+            </footer>
+        </div>
+
+        <foot-btn></foot-btn>
+    </div>
+</div>
